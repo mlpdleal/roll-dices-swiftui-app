@@ -27,7 +27,8 @@ struct DiceView: View {
                 DiceSixView()
             }
             
-        }
+        }.shadow(color: Color.indigo.opacity(0.7),
+                 radius: 10, x: 15, y: 15)
             
         
     }
