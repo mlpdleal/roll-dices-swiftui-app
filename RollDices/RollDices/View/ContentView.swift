@@ -13,37 +13,56 @@ struct ContentView: View {
     @State var newRollDice: Bool = false
  
     var body: some View {
+        
+        
         NavigationView{
-            VStack{
+           
+            ZStack{
                 
-                if firstRollDice {
-                    DiceView(num: Int.random(in: 1...6))
-                    DiceView(num: Int.random(in: 1...6))
-                }
+                RadialGradient(colors: [.cyan, .mint], center: .center, startRadius: 300, endRadius: 150)
+                    .ignoresSafeArea()
                 
-                if newRollDice {
-                    DiceView(num: Int.random(in: 1...6))
-                    DiceView(num: Int.random(in: 1...6))
-                }
-                Button{
-                    self.firstRollDice.toggle()
-                    self.newRollDice.toggle()
-                } label: {
-                    Text("Play")
-                        .foregroundColor(.white)
+                VStack{
                     
+                    if firstRollDice {
+                        Group{
+                            DiceView(num: Int.random(in: 1...6))
+                            DiceView(num: Int.random(in: 1...6))
+                        }.padding()
+                        
+                    }
                     
-                        .font(.headline)
-                        .frame(width: 150, height: 55)
-                        .background(Color.accentColor)
-                        .cornerRadius(15)
-                }.padding()
-             
-            }.navigationTitle("Roll Dices!!!  🎲🎲")
+                    if newRollDice {
+                        Group{
+                            DiceView(num: Int.random(in: 1...6))
+                            DiceView(num: Int.random(in: 1...6))
+                        }.padding()
+                        
+                    }
+                    Button{
+                        self.firstRollDice.toggle()
+                        self.newRollDice.toggle()
+                    } label: {
+                        Text("Play")
+                            .foregroundColor(.white)
+                        
+                            .font(.headline)
+                            .frame(width: 150, height: 55)
+                            .background(Color.accentColor)
+                            .cornerRadius(15)
+                    }.padding()
+                    
+                }.navigationTitle("Roll Dices!!!  🎲🎲")
+                
+            }
+            
         }
 
 
     }
+    
+
+
     
         
 
