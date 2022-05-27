@@ -11,6 +11,8 @@ struct ContentView: View {
     
     @State var firstRollDice: Bool = true
     @State var newRollDice: Bool = false
+    
+    @State var animationAmount = 1.0
  
     var body: some View {
         
@@ -27,21 +29,37 @@ struct ContentView: View {
                     if firstRollDice {
                         Group{
                             DiceView(num: Int.random(in: 1...6))
+                                .rotation3DEffect(.degrees(animationAmount), axis: (x: 0, y: 1, z: 0))
                             DiceView(num: Int.random(in: 1...6))
-                        }.padding()
+                                .rotation3DEffect(.degrees(animationAmount), axis: (x: 0, y: 1, z: 0))
+                        }
+                        .padding()
+                        
+                          
                         
                     }
                     
                     if newRollDice {
                         Group{
                             DiceView(num: Int.random(in: 1...6))
+                                .rotation3DEffect(.degrees(animationAmount), axis: (x: 0, y: 1, z: 0))
                             DiceView(num: Int.random(in: 1...6))
-                        }.padding()
+                                .rotation3DEffect(.degrees(animationAmount), axis: (x: 0, y: 1, z: 0))
+                        }
+                        .padding()
+                        
+                            
                         
                     }
                     Button{
+        
                         self.firstRollDice.toggle()
                         self.newRollDice.toggle()
+                        withAnimation{
+                            animationAmount += 1080
+                        }
+                
+           
                     } label: {
                         Text("Play")
                             .foregroundColor(.white)
