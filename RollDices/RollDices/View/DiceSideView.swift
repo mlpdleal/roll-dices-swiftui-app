@@ -17,7 +17,7 @@ struct DiceOneView: View {
        
         }
         .frame(width: 150, height: 150)
-        .background(Color.indigo)
+        .background(Color.red)
         .cornerRadius(20)
     }
 }
@@ -32,7 +32,7 @@ struct DiceTwoView: View {
        
         }
         .frame(width: 150, height: 150)
-        .background(Color.indigo)
+        .background(Color.red)
         .cornerRadius(20)
     }
 }
@@ -50,7 +50,7 @@ struct DiceThreeView: View {
        
         }
         .frame(width: 150, height: 150)
-        .background(Color.indigo)
+        .background(Color.red)
         .cornerRadius(20)
     }
 }
@@ -69,7 +69,7 @@ struct DiceFourView: View {
        
         }
         .frame(width: 150, height: 150)
-        .background(Color.indigo)
+        .background(Color.red)
         .cornerRadius(20)
     }
 }
@@ -91,7 +91,7 @@ struct DiceFiveView: View {
        
         }
         .frame(width: 150, height: 150)
-        .background(Color.indigo)
+        .background(Color.red)
         .cornerRadius(20)
     }
 }
@@ -114,7 +114,7 @@ struct DiceSixView: View {
        
         }
         .frame(width: 150, height: 150)
-        .background(Color.indigo)
+        .background(Color.red)
         .cornerRadius(20)
     }
 }
